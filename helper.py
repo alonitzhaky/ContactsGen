@@ -1,5 +1,4 @@
 import json
-from Contacts import *
 
 def menuContacts():
     print("Welcome to Contacts 1.0.0.")
@@ -11,22 +10,22 @@ def menuContacts():
     userSelection = input("Select your option: ")
     return userSelection
 
-def addContact(contacts):
+def addContact(contact, DATA_FILE):
     userName = input("Contact's Name: ")
     userTel = input("Contact's Tel: ")
-    contact = contacts.append({"name": userName, "tel": userTel})
+    contact = {"name": userName, "tel": userTel}
     print("Added.")
-    writeContact(contact, DATA_FILE)
+    saveInfo(contact, DATA_FILE)
 
-def writeContact(contact, DATA_FILE):
+def saveInfo(contacts, DATA_FILE):
     with open(DATA_FILE, "r+") as file:
         existingData = json.load(file)
-        existingData["contact_details"].append(contact)
+        existingData["contact_details"].append(contacts)
         file.seek(0)
         json.dump(existingData, file, indent = 4)
 
 def printContacts(DATA_FILE, contacts):
     with open(DATA_FILE) as file:
         json.load(file)
-    print("contact_details")
+    print(contacts)
 

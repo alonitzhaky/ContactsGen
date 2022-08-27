@@ -7,7 +7,6 @@ Method List:
 # Delete
 # Search
 """
-
 from helper import *
 contacts = []
 DATA_FILE = "contacts.json"
@@ -17,7 +16,7 @@ def main():
     userSelection = menuContacts()
     while userSelection != "x":
         if userSelection == "a":
-            addContact(contacts)
+            addContact(contacts, DATA_FILE)
         if userSelection == "p":
             printContacts(contacts)
         if userSelection == "d":
@@ -25,7 +24,7 @@ def main():
         if userSelection == "s":
             searchContact()
         userSelection = menuContacts()
-    saveInfo(DATA_FILE, contacts)
+    saveInfo(contacts, DATA_FILE)
 
 
 if __name__ == "__main__":
