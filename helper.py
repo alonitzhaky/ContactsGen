@@ -1,4 +1,5 @@
 import json
+from Contacts import *
 
 def menuContacts():
     print("Welcome to Contacts 1.0.0.")
@@ -15,9 +16,9 @@ def addContact(contact, DATA_FILE):
     userTel = input("Contact's Tel: ")
     contact = {"name": userName, "tel": userTel}
     print("Added.")
-    saveInfo(contact, DATA_FILE)
+    saveInfo(contact)
 
-def saveInfo(contact, DATA_FILE):
+def saveInfo(contact):
     with open(DATA_FILE, "r+") as file:
         existingData = json.load(file)
         existingData["contact_details"].append(contact)

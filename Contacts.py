@@ -24,7 +24,7 @@ def main():
         if userSelection == "s":
             searchContact()
         userSelection = menuContacts()
-    saveInfo(contacts, DATA_FILE)
+    # saveInfo("THIS IS A TEST.")
 
 
 if __name__ == "__main__":
