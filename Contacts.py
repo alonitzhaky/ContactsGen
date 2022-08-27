@@ -16,7 +16,7 @@ def main():
     userSelection = menuContacts()
     while userSelection != "x":
         if userSelection == "a":
-            addContact(contacts, DATA_FILE)
+            addContact(contacts)
         if userSelection == "p":
             printContacts(contacts)
         if userSelection == "d":

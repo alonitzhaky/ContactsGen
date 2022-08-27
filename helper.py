@@ -11,7 +11,7 @@ def menuContacts():
     userSelection = input("Select your option: ")
     return userSelection
 
-def addContact(contact, DATA_FILE):
+def addContact(contact):
     userName = input("Contact's Name: ")
     userTel = input("Contact's Tel: ")
     contact = {"name": userName, "tel": userTel}
