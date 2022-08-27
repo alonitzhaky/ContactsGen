@@ -17,10 +17,10 @@ def addContact(contact, DATA_FILE):
     print("Added.")
     saveInfo(contact, DATA_FILE)
 
-def saveInfo(contacts, DATA_FILE):
+def saveInfo(contact, DATA_FILE):
     with open(DATA_FILE, "r+") as file:
         existingData = json.load(file)
-        existingData["contact_details"].append(contacts)
+        existingData["contact_details"].append(contact)
         file.seek(0)
         json.dump(existingData, file, indent = 4)
 
